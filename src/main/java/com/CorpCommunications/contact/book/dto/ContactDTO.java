@@ -6,13 +6,13 @@ import java.util.Objects;
 public class ContactDTO {
 
     private Long contactId;
-    private String phone;
-    private String email;
+    private String contactType;
+    private String value;
 
-    public ContactDTO(Long contactId, String phone, String email) {
+    public ContactDTO(Long contactId, String contactType, String value) {
         this.contactId = contactId;
-        this.phone = phone;
-        this.email = email;
+        this.contactType = contactType;
+        this.value = value;
     }
 
     public Long getContactId() {
@@ -23,20 +23,20 @@ public class ContactDTO {
         this.contactId = contactId;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getContactType() {
+        return contactType;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setContactType(String contactType) {
+        this.contactType = contactType;
     }
 
-    public String getEmail() {
-        return email;
+    public String getValue() {
+        return value;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setValue(String value) {
+        this.value = value;
     }
 
     @Override
@@ -44,20 +44,20 @@ public class ContactDTO {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ContactDTO that = (ContactDTO) o;
-        return Objects.equals(contactId, that.contactId) && Objects.equals(phone, that.phone) && Objects.equals(email, that.email);
+        return Objects.equals(contactId, that.contactId) && Objects.equals(contactType, that.contactType) && Objects.equals(value, that.value);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(contactId, phone, email);
+        return Objects.hash(contactId, contactType, value);
     }
 
     @Override
     public String toString() {
         return "ContactDTO{" +
                 "contactId=" + contactId +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
+                ", contactType='" + contactType + '\'' +
+                ", value='" + value + '\'' +
                 '}';
     }
 }
