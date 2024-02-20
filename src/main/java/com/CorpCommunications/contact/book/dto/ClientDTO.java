@@ -1,28 +1,27 @@
 package com.CorpCommunications.contact.book.dto;
 
 
+import java.util.List;
 import java.util.Objects;
 
 public class ClientDTO {
 
-    private long id;
+    private Long clientId;
     private String name;
-    private String phone;
-    private String email;
+    private List<ContactDTO> contacts;
 
-    public ClientDTO(long id, String name, String phone, String email) {
-        this.id = id;
+    public ClientDTO(Long clientId, String name, List<ContactDTO> contacts) {
+        this.clientId = clientId;
         this.name = name;
-        this.phone = phone;
-        this.email = email;
+        this.contacts = contacts;
     }
 
-    public long getId() {
-        return id;
+    public Long getClientId() {
+        return clientId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
     }
 
     public String getName() {
@@ -33,20 +32,12 @@ public class ClientDTO {
         this.name = name;
     }
 
-    public String getPhone() {
-        return phone;
+    public List<ContactDTO> getContacts() {
+        return contacts;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setContacts(List<ContactDTO> contacts) {
+        this.contacts = contacts;
     }
 
     @Override
@@ -54,21 +45,20 @@ public class ClientDTO {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ClientDTO clientDTO = (ClientDTO) o;
-        return id == clientDTO.id && Objects.equals(name, clientDTO.name) && Objects.equals(phone, clientDTO.phone) && Objects.equals(email, clientDTO.email);
+        return Objects.equals(clientId, clientDTO.clientId) && Objects.equals(name, clientDTO.name) && Objects.equals(contacts, clientDTO.contacts);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, phone, email);
+        return Objects.hash(clientId, name, contacts);
     }
 
     @Override
     public String toString() {
         return "ClientDTO{" +
-                "id=" + id +
+                "clientId=" + clientId +
                 ", name='" + name + '\'' +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
+                ", contacts=" + contacts +
                 '}';
     }
 }
