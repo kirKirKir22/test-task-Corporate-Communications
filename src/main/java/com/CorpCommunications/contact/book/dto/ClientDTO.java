@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -12,8 +13,9 @@ import java.util.List;
 @NoArgsConstructor
 public class ClientDTO {
 
-    private Long id;
-    private String name;
-    private List<ContactDTO> contacts;
+    private Long clientId;
+    private String clientName;
+    private List<ContactDTO> contacts = new ArrayList<>();
+
 
 }

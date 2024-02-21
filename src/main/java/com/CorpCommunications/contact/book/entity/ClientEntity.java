@@ -4,6 +4,7 @@ package com.CorpCommunications.contact.book.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -17,11 +18,12 @@ public class ClientEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long clientId;
 
-    private String name;
+    @Column(nullable = false)
+    private String clientName;
 
-    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
-    private List<ContactEntity> contacts;
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ContactEntity> contacts = new ArrayList<>();
 
 }

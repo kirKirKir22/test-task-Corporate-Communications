@@ -1,6 +1,5 @@
 package com.CorpCommunications.contact.book.entity;
 
-import com.CorpCommunications.contact.book.ContactType;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -15,16 +14,17 @@ public class ContactEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Enumerated(EnumType.STRING)
-    private ContactType type;
-
-    private String value;
+    private Long contactId;
 
     @ManyToOne
     @JoinColumn(name = "client_id")
     private ClientEntity client;
+
+    @Column(nullable = false)
+    private String contactType;
+
+    @Column(nullable = false)
+    private String contactValue;
 
 
 }

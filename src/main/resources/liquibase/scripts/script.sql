@@ -1,5 +1,7 @@
 -- liquibase formatted sql
 
+-- changeset Kirill:1
+
 CREATE TABLE Client (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL

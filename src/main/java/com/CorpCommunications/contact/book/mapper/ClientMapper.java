@@ -6,6 +6,6 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface ClientMapper {
-    ClientDTO toDTO(ClientEntity clientEntity);
+    ClientDTO toDto(ClientEntity clientEntity);
     ClientEntity toEntity(ClientDTO clientDTO);
 }
