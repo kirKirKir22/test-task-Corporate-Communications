@@ -8,13 +8,8 @@ import java.util.List;
 
 public interface ClientService {
 
-    ClientDTO createClient(ClientDTO clientDTO);
-
     List<ClientDTO> getAllClients();
-
     ClientDTO getClientById(Long clientId);
+    ClientDTO addClient(ClientDTO clientDTO);
 
-    List<ContactDTO> getClientContacts(Long clientId);
-
-    List<ContactDTO> getClientContactsByType(ContactType type, Long clientId);
 }
